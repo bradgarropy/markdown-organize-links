@@ -1,0 +1,33 @@
+{
+    "name": "markdown-organize-links",
+    "version": "0.0.1",
+    "description": "<description>",
+    "keywords": [],
+    "homepage": "https://github.com/bradgarropy/markdown-organize-links",
+    "bugs": {
+        "url": "https://github.com/bradgarropy/markdown-organize-links/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Brad Garropy",
+        "email": "bradgarropy@gmail.com",
+        "url": "https://bradgarropy.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bradgarropy/markdown-organize-links"
+    },
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.15.3",
+        "eslint-config-bradgarropy": "^1.1.0",
+        "eslint-plugin-jsx-a11y": "^6.2.1",
+        "eslint-plugin-react": "^7.12.4",
+        "eslint-plugin-react-hooks": "^1.5.1"
+    },
+    "peerDependencies": {}
+}
