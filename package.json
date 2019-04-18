@@ -1,8 +1,13 @@
 {
     "name": "markdown-organize-links",
     "version": "0.0.1",
-    "description": "<description>",
-    "keywords": [],
+    "description": "🗃 markdown reference style links",
+    "keywords": [
+        "markdown",
+        "javascript",
+        "eslint",
+        "prettier"
+    ],
     "homepage": "https://github.com/bradgarropy/markdown-organize-links",
     "bugs": {
         "url": "https://github.com/bradgarropy/markdown-organize-links/issues"
@@ -20,7 +25,9 @@
     "scripts": {
         "start": ""
     },
-    "dependencies": {},
+    "dependencies": {
+        "commander": "^2.20.0"
+    },
     "devDependencies": {
         "babel-eslint": "^10.0.1",
         "eslint": "^5.15.3",
