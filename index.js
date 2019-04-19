@@ -20,16 +20,37 @@ const findLinks = markdown => {
     return links
 }
 
-const createReferences = links => {
-    const references = links.map((link, index) => {
+const writeReferences = (markdown, links) => {
+    let modifiedMarkdown = markdown + "\n\n"
+
+    links.forEach((link, index) => {
         index = index + 1
         const {url} = link.groups
-        const reference = `[${index}]: ${url}`
-
-        return reference
+        const string = `[${index}]: ${url}`
+        modifiedMarkdown = modifiedMarkdown + string + "\n"
     })
 
-    return references
+    modifiedMarkdown = modifiedMarkdown + "\n"
+    return modifiedMarkdown
+}
+
+const replaceLinks = (markdown, links) => {
+    let modifiedMarkdown = markdown
+
+    links.forEach((link, index) => {
+        const {url} = link.groups
+        console.log(modifiedMarkdown)
+        console.log(index + 1)
+        modifiedMarkdown = modifiedMarkdown.replace(
+            `(${url})`,
+            `[${index + 1}]`,
+        )
+    })
+
+    console.log("-------------------------------")
+    console.log(modifiedMarkdown)
+
+    return modifiedMarkdown
 }
 
 const main = () => {
@@ -44,14 +65,14 @@ const main = () => {
     // find all links
     const links = findLinks(markdown)
 
-    // create references
-    const references = createReferences(links)
-    const referencesString = "\n\n" + references.join("\n") + "\n"
-
     // write references to bottom
-    fs.appendFileSync(absolutePath, referencesString)
+    let modifiedMarkdown = writeReferences(markdown, links)
 
     // modify inline links
+    modifiedMarkdown = replaceLinks(modifiedMarkdown, links)
+
+    // write to file
+    fs.writeFileSync(absolutePath, modifiedMarkdown)
 
     return
 }
